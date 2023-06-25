@@ -29,7 +29,7 @@ def summarise_text(text: str, setting: str = 'HuggingFace'):
     texts = text_splitter.split_text(text)
     docs = [Document(page_content=t) for t in texts]
     
-    prompt_template = """Summarise the following text:
+    prompt_template = """Write a meaningful summary of the following text:
 
 
         {text}
