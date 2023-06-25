@@ -1,14 +1,14 @@
 #%%
 import os
 from dotenv import load_dotenv
-from langchain import OpenAI, PromptTemplate, LLMChain
+from langchain import OpenAI, PromptTemplate
 from langchain import HuggingFaceHub
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.docstore.document import Document
-from langchain.embeddings import HuggingFaceEmbeddings
+# from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.prompts import PromptTemplate
 from langchain.chains.summarize import load_summarize_chain
-import textwrap
+# import textwrap
 
 
 def summarise_text(text: str, setting: str = 'HuggingFace'):
