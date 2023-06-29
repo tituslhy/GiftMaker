@@ -31,9 +31,12 @@ def LLM_write(text: str,
     texts = text_splitter.split_text(text)
     docs = [Document(page_content=t) for t in texts]
     
-    prompt_template = """Write a funny happy birthday message
-    to Shauna from the following text":
+    prompt_template = """Write a message appreciating Shauna
+    from the following text":
+    
+    
         {text}
+        
     """
     PROMPT = PromptTemplate(template = prompt_template, input_variables=['text'])
     # chain = load_summarize_chain(llm, chain_type = 'stuff', prompt = PROMPT)
