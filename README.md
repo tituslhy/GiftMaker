@@ -1,7 +1,6 @@
 # Have you ever wanted to create a meaningful card for someone with a click of a button?
 
-<div>
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+<div align="center">
 [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
 ![Generic badge](https://img.shields.io/badge/STATUS-INPROGRESS-<COLOR>.svg)
 
