@@ -1,7 +1,7 @@
 # Have you ever wanted to create a meaningful card for someone with a click of a button?
 
 <div align="center">
-![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
+
 ![Generic badge](https://img.shields.io/badge/STATUS-INPROGRESS-<COLOR>.svg)
 
 </div>
