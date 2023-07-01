@@ -5,12 +5,8 @@ from langchain import OpenAI, PromptTemplate
 from langchain import HuggingFaceHub
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.docstore.document import Document
-# from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.prompts import PromptTemplate
-# from langchain.chains.summarize import load_summarize_chain
 from langchain.chains import LLMChain
-# import textwrap
-
 
 def LLM_write(text: str, 
               setting: str = 'HuggingFace'):
@@ -22,16 +18,17 @@ def LLM_write(text: str,
         #                      model_kwargs = {'temperature': 0.90,
         #                                      'max_length': 2048})
         llm = HuggingFaceHub(repo_id = "tiiuae/falcon-7b-instruct",
-                             model_kwargs = {'temperature': 0.7,
-                                             'max_length': 2048})
+                             model_kwargs = {'temperature': 0.9,
+                                             'max_length': 512})
     elif setting == "OpenAI":
         OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
         llm = OpenAI(temperature=0, openai_api_key = OPENAI_API_KEY)
+        
     text_splitter = CharacterTextSplitter()
     texts = text_splitter.split_text(text)
     docs = [Document(page_content=t) for t in texts]
     
-    prompt_template = """Write a message appreciating Shauna
+    prompt_template = """Write a message appreciating a friend
     from the following text":
     
     

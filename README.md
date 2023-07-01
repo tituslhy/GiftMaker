@@ -1,2 +1,19 @@
-# Have you ever wanted to create a meaningful video montage for someone with a click of a button?
-So have I! With the state of AI, this is doable via clicks of a button - except for the part where you have to record videos of course (unless you want AI to generate a video for you. Hmm...)
+# Have you ever wanted to create a meaningful card for someone with a click of a button?
+
+<div>
+🦜️🔗 LangChain
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
+![Generic badge](https://img.shields.io/badge/STATUS-INPROGRESS-<COLOR>.svg)
+
+</div>
+
+<p align="center">
+  <img src="images/AI_gift.png">
+</p> <br>
+So have I! This tool comprises:
+* Video stitcher: Stitches all recorded videos into a single video. This can be used for data pre-processing or used to stitch a compilation as a gift.
+* Automatic speech recognition: Using OpenAI's whisper model, we transcribe the meaningful messages into text for the LLM to do its work.
+* Generative AI: Using langchain, we call the LLM (ChatGPT/HuggingFace models/other langchain supported LLMs) to do something funny - like write out an entire dating profile of your friend in html using the video transcript from Whisper. This can then be given as a gift to your friend as well
+
+This tool was tested using my personal repository of video montages from friends appreciating other friends.
