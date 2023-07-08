@@ -1,0 +1,7 @@
+langchain==0.0.228
+numpy==1.23.5
+openai==0.27.8
+openai_whisper==20230314
+python-dotenv==1.0.0
+torch==2.0.0
+whisper==1.1.10
