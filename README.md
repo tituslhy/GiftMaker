@@ -28,7 +28,15 @@ git clone https://github.com/tituslhy/VideoMaker
 pip -r requirements.txt
 python3 main.py --root "{folder_with_videos}" --star "{name_of_friend}" --LLM "{OpenAI/HuggingFace}"
 ```
-Of the arguments in the terminal run string, only the LLM setting is optional and defaults to None. In this instance, nothing is returned aside from the stitched video and the txt file. This is for users that prefer to craft more deliberate prompts and/or do not have a paid OpenAI account but wish to use ChatGPT for free on OpenAI's website.
+Of the arguments in the terminal run string, only the LLM setting is optional and defaults to None. In this instance, nothing is returned aside from the stitched video and the txt file. This is for users that prefer to craft more deliberate prompts and/or do not have a paid OpenAI account but wish to use ChatGPT for free on OpenAI's website. <br>
+
+The default prompt can be found in "src/summarsise.py":  """Write a message appreciating a friend
+    from the following text": <br><br>
+    
+    
+        {text}
+        
+    """
 
 ### LLMs used:
 1. ChatGPT - if the OpenAI setting is selected
