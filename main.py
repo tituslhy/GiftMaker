@@ -1,7 +1,10 @@
 #%%
+import argparse
 from src.movieStitcher import stitch_movie
 from src.audio_scribe import audio_scribe
 from src.summarise import LLM_write
+
+parser = argparse.ArgumentParser()
 
 #%%
 def main(root: str,
