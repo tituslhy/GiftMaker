@@ -11,7 +11,7 @@
 </div>
 
 <p align="center">
-  <img src="images/AI_gift.png">
+  <img width = "500px" src="images/AI_gift.png">
 </p> <br>
 So have I! 
 
