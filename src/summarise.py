@@ -14,9 +14,6 @@ def LLM_write(text: str,
     load_dotenv()
     if setting == "HuggingFace":
         os.environ['HUGGINGFACEHUB_API_TOKEN'] = os.environ.get('HUGGINGFACE_API_TOKEN')
-        # llm = HuggingFaceHub(repo_id = "google/flan-t5-base",
-        #                      model_kwargs = {'temperature': 0.90,
-        #                                      'max_length': 2048})
         llm = HuggingFaceHub(repo_id = "tiiuae/falcon-7b-instruct",
                              model_kwargs = {'temperature': 0.9,
                                              'max_length': 512})
@@ -36,9 +33,16 @@ def LLM_write(text: str,
         
     """
     PROMPT = PromptTemplate(template = prompt_template, input_variables=['text'])
-    # chain = load_summarize_chain(llm, chain_type = 'stuff', prompt = PROMPT)
     chain = LLMChain(llm = llm, prompt = PROMPT)
-    return chain.run(docs)
+    if setting == "OpenAI":
+        return chain.run(docs)
+    else: #HuggingFace models might not work if max API calls are exceeded.
+        try:
+            chain = LLMChain(llm = llm, prompt = PROMPT)
+        except:
+            llm = HuggingFaceHub(repo_id="google/flan-t5-base")
+            chain = LLMChain(llm = llm, prompt = PROMPT)
+            return chain.run(docs)
 
 #%%
 if __name__ == "__main__":
