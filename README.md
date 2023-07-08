@@ -4,7 +4,7 @@
 
 🦜️🔗 LangChain
 📉 Whisper
-<br>
+<br><br>
 ![Generic badge](https://img.shields.io/badge/STATUS-INPROGRESS-<COLOR>.svg)
 </div>
 
