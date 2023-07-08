@@ -4,8 +4,8 @@
 
 🦜️🔗 LangChain
 📉 Whisper
-<img width = "100px" src="images/huggingface.png">
-<img width = "100px" src="images/chatgpt.png">
+<img width = "80px" src="images/huggingface.png">
+<img width = "60px" src="images/chatgpt.png">
 <br><br>
 ![Generic badge](https://img.shields.io/badge/STATUS-INPROGRESS-<COLOR>.svg)
 </div>
