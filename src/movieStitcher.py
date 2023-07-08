@@ -18,12 +18,16 @@ def stitch_movie(files_dir: str, outfile_name: str):
     joined = ffmpeg.concat(*to_merge,
                             v = 1,
                             a = 1).node
+    out_path = f"{files_dir}/{outfile_name}.mp4"
     ffmpeg.output(joined[0], 
                   joined[1], 
-                  f"{files_dir}/{outfile_name}.mp4").run()
+                  out_path).run()
 
     print("Files merged")
+#     return out_path
+
 # %%
 if __name__ == "__main__":
-    files_dir = "../Tests"
+    files_dir = "../Videos/TeYang"
     stitch_movie(files_dir, "happybirthday")
+# %%

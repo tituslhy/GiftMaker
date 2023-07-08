@@ -12,9 +12,11 @@ def audio_scribe(audio_filepath: str, outfile_path: str):
         model = whisper.load_model('base.en', device = 'cpu')
     
     result = model.transcribe(audio_filepath, fp16 = False)
-    with open(f'{outfile_path}.txt', 'w') as file:
+    txt_file = f"{outfile_path}.txt"
+    with open(txt_file, 'w') as file:
         file.write(result['text'])
     print("Audio file scribed")
+    return txt_file
 #%%
 if __name__ == '__main__':
     audio_scribe(audio_filepath = '../Tests/happybirthday.mp4',
