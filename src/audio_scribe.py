@@ -2,7 +2,7 @@
 import os
 import torch
 import whisper
-from utils import get_device
+from .utils import get_device
 
 def audio_scribe(audio_filepath: str, outfile_path: str):
     device = get_device()
