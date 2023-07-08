@@ -2,7 +2,7 @@
 Tests
 .DS_store
 Videos/
-src/stitch.bas
+src/stitch.bash
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
