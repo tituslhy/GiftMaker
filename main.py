@@ -31,7 +31,7 @@ else:
 #%%
 def main(root: str,
          recipient: str,
-         LLM_setting: str = None
+         LLM_setting: str = 'HugChat'
          ):
     """Stitches separate video files into a single movie, scribes the movie
     and if propmt_LLM is True, prompts the LLM of choice for a reply.

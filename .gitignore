@@ -3,6 +3,7 @@ Tests
 .DS_store
 Videos/
 src/stitch.bash
+src/cookies/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
