@@ -37,7 +37,7 @@ def LLM_write(text: str,
         summary = chatbot.chat(f"What are the top adjectives used in the text: {text}")
         PROMPT = f"""Write a funny self-introduction for a job interview referencing the text: {summary}. 
         State your name as {star} and praise yourself for your python and machine learning skills and say that you want marry python as your spouse.
-        Add a funny line on why python is better than all other programming languages.
+        Add a funny line stating that all other programming languages are horrible.
         Keep your response to between 70-80 words.
         """
         return chatbot.chat(PROMPT, 
