@@ -51,7 +51,9 @@ def main(root: str,
     if LLM_setting:
         with open(txt_path, 'r') as f:
             text = f.read()
-        return LLM_write(text, LLM_setting)
+        return LLM_write(text = text, 
+                         star = recipient, 
+                         setting = LLM_setting)
 
 #%%
 if __name__ == "__main__":
