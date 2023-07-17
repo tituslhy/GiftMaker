@@ -6,6 +6,8 @@ from src.audio_scribe import audio_scribe
 from src.summarise import LLM_write
 
 #%%
+os.environ['CURL_CA_BUNDLE'] = ''
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--root',
                     type = str,

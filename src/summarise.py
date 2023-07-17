@@ -10,6 +10,8 @@ from langchain.chains import LLMChain
 from hugchat.login import Login
 from hugchat import hugchat
 
+os.environ['CURL_CA_BUNDLE'] = ''
+
 def LLM_write(text: str, 
               star: str = None,
               setting: str = 'HugChat'):
@@ -34,11 +36,17 @@ def LLM_write(text: str,
         chatbot.change_conversation(id)
         
         # Get output
-        summary = chatbot.chat(f"What are the top adjectives used in the text: {text}")
-        PROMPT = f"""Write a funny self-introduction for a job interview referencing the text: {summary}. 
-        State your name as {star} and praise yourself for your python and machine learning skills and say that you want marry python as your spouse.
-        Add a funny line stating that all other programming languages are horrible.
-        Keep your response to between 70-80 words.
+        summary = chatbot.chat(f"What are the top adjectives describing {star} found in the text: '{text}' ")
+        # PROMPT = f"""Write a funny negotiation elevator pitch for a job interview referencing the top adjectives from the text: "{summary}". 
+        # State your name as {star} and praise yourself for your python and machine learning skills and say that you want marry python as your spouse.
+        # Add a funny line stating that all other programming languages are horrible.
+        # Keep your response to between 70-80 words.
+        # """
+        PROMPT = f"""Write a message from {star}'s future self to {star} using adjectives from "{summary}". 
+        Tell {star} to stay focused on python, and talk in comic detail about why other programming languages are awful.
+        End the letter with "Dai-son {star}" and add that you decided to give yourself that name.
+        
+        Keep the entire letter within 80 words
         """
         return chatbot.chat(PROMPT, 
                             max_new_tokens = 2048)
@@ -78,8 +86,8 @@ def LLM_write(text: str,
 
 #%%
 if __name__ == "__main__":
-    with open("./Tests/happybirthdayscript.txt", "r") as f:
+    with open("../Tests/happybirthdayscript.txt", "r") as f:
         text = f.read()
-    summary = LLM_write(text)
+    summary = LLM_write(text, star = "Bob")
     print(summary)
 # %%
