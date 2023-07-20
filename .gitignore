@@ -4,6 +4,7 @@ Tests
 Videos/
 src/stitch.bash
 src/cookies/
+models/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
