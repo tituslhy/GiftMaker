@@ -1,5 +1,6 @@
 #%%
 import os
+os.environ['CURL_CA_BUNDLE'] = ''
 from dotenv import load_dotenv
 from langchain import OpenAI, PromptTemplate
 from langchain import HuggingFaceHub
@@ -10,7 +11,9 @@ from langchain.chains import LLMChain
 from hugchat.login import Login
 from hugchat import hugchat
 
-os.environ['CURL_CA_BUNDLE'] = ''
+import warnings
+warnings.filterwarnings("ignore")
+
 
 def LLM_write(text: str, 
               star: str = None,
@@ -37,9 +40,19 @@ def LLM_write(text: str,
         
         # Get output
         summary = chatbot.chat(f"What are the top adjectives describing {star} found in the text: '{text}' ")
-        PROMPT = f"""Write a funny negotiation elevator pitch for a job interview referencing the top adjectives from the text: "{summary}". 
-        State your name as {star} and praise yourself for your python and machine learning skills and say that you want marry python as your spouse.
-        Add a funny line stating that all other programming languages are horrible.
+        PROMPT = f"""Write a tweet for {star} to the President to join the Singapore Management University 
+        as their poster girl.
+        
+        State your name as {star}.
+        State that you know the position you are applying for does not exist, but after your application, it is impossible to resist.
+        List your top qualities from the text: "{summary}". 
+        Talk about how your previous boss hugged too many pandas.
+        Add that Jira is a weird system that issues you only code tickets and not concert tickets,
+        Add that you have developed enough models to know that the true 'model' is yourself.
+        Add that you are beautiful like the oplascent lilies on a sunkissed datalake in DataBricks.
+        
+        Finally, Add that you have changed your name to HuggingFace as a dedication to your dream of fashion modelling.
+        
         Keep your response to between 70-80 words.
         """
         
@@ -81,8 +94,8 @@ def LLM_write(text: str,
 
 #%%
 if __name__ == "__main__":
-    with open("../Tests/happybirthdayscript.txt", "r") as f:
+    with open("../Videos/Shauna/happybirthday_Shauna_script.txt", "r") as f:
         text = f.read()
-    summary = LLM_write(text, star = "Bob")
+    summary = LLM_write(text, star = "Shauna")
     print(summary)
 # %%

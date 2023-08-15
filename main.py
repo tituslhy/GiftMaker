@@ -1,9 +1,12 @@
 #%%
 import argparse
 import os
+import warnings
+warnings.filterwarnings("ignore")
+
 from src.movieStitcher import stitch_movie
 from src.audio_scribe import audio_scribe
-from src.summarise import LLM_write
+from prompt import LLM_write
 
 #%%
 os.environ['CURL_CA_BUNDLE'] = ''
@@ -59,7 +62,7 @@ def main(root: str,
 
 #%%
 if __name__ == "__main__":
-    recipient = "Bob"
+    recipient = "Shauna"
     root = f"./Videos/{recipient}"
     main(root, recipient)
 # %%
